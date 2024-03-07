@@ -122,7 +122,6 @@ suite('Functional Tests with Zombie.js', function () {
     // #5
       //assert.fail();
   test('Submit the surname "Colombo" in the HTML form', function (done) {
-    //test('submit "surname" : "Colombo" - write your e2e test...', function(done) {
   //mytest
        browser.fill('surname', 'Colombo')
        browser.pressButton('submit', function(){
@@ -137,9 +136,17 @@ suite('Functional Tests with Zombie.js', function () {
 
     // #6
     test('Submit the surname "Vespucci" in the HTML form', function (done) {
-      assert.fail();
-
+      //assert.fail();
+      //mytest
+      browser.fill('surname', 'Vespucci')
+       browser.pressButton('submit', function(){
+       browser.assert.success();
+       browser.assert.text("span#name", "Amerigo");
+       browser.assert.text("span#surname", "Vespucci");
+       browser.assert.elements('span#dates', 1);
       done();
+       });
     });
+
   });
 });
